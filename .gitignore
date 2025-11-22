@@ -1,0 +1,50 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Local environment files
+.env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vite cache
+.vite/
+vite.config.timestamp-*
+
+# Editor specific files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage directory used by tools like jest
+coverage/
+
+# Local server temp data
+tmp/
+temp/
+
+# Folder for file uploads (if any)
+uploads/
+public/uploads/
+
+# Optional: Next updates from future features
+# Firebase / Analytics cache
+.firebaserc
+.firebase/
