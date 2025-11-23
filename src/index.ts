@@ -10,8 +10,7 @@ const server = http.createServer(app);
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://secret-talk.vercel.app",
-  "https://secret-talk-api.onrender.com"
+  "https://secret-talk-app.vercel.app",
 ];
 
 const io = new Server(server, {
