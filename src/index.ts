@@ -1,24 +1,28 @@
 import express from "express";
 import http from "http";
-import {Server} from "socket.io";
+import { Server } from "socket.io";
 import cors from "cors";
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: "*", // Temporarily allow all — easier debugging
+  credentials: true
+}));
 
 const server = http.createServer(app);
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://secret-talk-app.vercel.app",
-];
-
+// IMPORTANT: Render needs WebSocket-only transport to avoid disconnects
 const io = new Server(server, {
   cors: {
-    origin: allowedOrigins,
+    origin: [
+      "http://localhost:5173",
+      "https://secret-talk-app.vercel.app/"
+    ],
     methods: ["GET", "POST"],
     credentials: true
-  }
+  },
+  transports: ["websocket"]
 });
 
 io.on("connection",(socket) => {
